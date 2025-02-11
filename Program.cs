@@ -1,34 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-app.Urls.Add("http://localhost:5000");
-
-app.MapGet("/", () => "Hello World!");
-
-app.MapGet("/{cityName}/weather", GetWeatherByCity);
-
-app.Run();
-
-
-Weather GetWeatherByCity(string cityName)
+class Car 
 {
-    app.Logger.LogInformation($"Weather requested for {cityName}.");
-    var weather = new Weather(cityName);
-    return weather;
-}
+  //Attributes go here
+  string colour;
 
-public record Weather
-{
-    public string City { get; set; }
+  //Constructor to make a new object of class Car
+  public Car(string aColour){
+    colour = aColour;
+  }
 
-    public Weather(string city)
-    {
-        City = city;
-        Conditions = "Cloudy";
-        // Temperature here is in celsius degrees, hence the 0-40 range.
-        Temperature = new Random().Next(0,40).ToString();
-    }
+  //Main runs automatically when the Program is run
+  static void Main(string[] args)
+  {
+    //Calling the constructor of the Car class to make a new Car object
+    Car myObj = new Car("Black");
 
-    public string Conditions { get; set; }
-    public string Temperature { get; set; }
+    //Printing an attribute
+    Console.WriteLine(myObj.colour);
+  }
 }
