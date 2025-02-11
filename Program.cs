@@ -3,7 +3,7 @@ class Car
   //Attributes go here
   string colour;
 
-  //Constructor to make a new object of class Car
+  //Constructor to make a new object of class Car..
   public Car(string aColour){
     colour = aColour;
   }
