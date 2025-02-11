@@ -13,8 +13,10 @@ class Car
   {
     //Calling the constructor of the Car class to make a new Car object
     Car myObj = new Car("Black");
+    Car myObj2 = new Car("Yellow");
 
     //Printing an attribute
     Console.WriteLine(myObj.colour);
+    Console.WriteLine(myObj2.colour);
   }
 }
